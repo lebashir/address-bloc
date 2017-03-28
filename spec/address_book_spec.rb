@@ -137,4 +137,11 @@ RSpec.describe AddressBook do
        expect(entry).to be_nil
      end
   end
+  describe "#kaboom" do
+    it "deletes all entries" do
+      book.import_from_csv("entries.csv")
+      book.kaboom
+      expect(book.entries.size).to eq 0
+    end
+  end
 end

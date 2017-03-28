@@ -28,7 +28,8 @@ def add_entry(name, phone_number, email)
   end
 
   entries.insert(index, Entry.new(name, phone_number, email))
-  end
+end
+
   def import_from_csv(file_name)
     csv_text = File.read(file_name)
     csv = CSV.parse(csv_text, headers: true, skip_blanks: true)
@@ -60,5 +61,8 @@ def add_entry(name, phone_number, email)
      end
 
     return nil
+  end
+  def kaboom
+    @entries = []
   end
 end
